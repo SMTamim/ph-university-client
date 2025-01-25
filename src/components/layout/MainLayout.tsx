@@ -1,39 +1,9 @@
-import { Layout, Menu, MenuProps } from 'antd';
-import { createElement } from 'react';
-import { UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/icons';
+import { Layout, Menu } from 'antd';
+import { Outlet } from 'react-router-dom';
+import { adminSidebarItems } from '../../routes/admin.routes';
 const { Header, Content, Footer, Sider } = Layout;
 
 
-const items: MenuProps['items'] = [
-    {
-        key: '1',
-        icon: createElement(UploadOutlined),
-        label: 'Dashboard',
-    },
-    {
-        key: '2',
-        icon: createElement(VideoCameraOutlined),
-        label: 'Profile'
-    },
-    {
-        key: '3',
-        icon: createElement(UserOutlined),
-        label: 'User Management',
-        children: [
-            {
-                key: '4',
-                icon: createElement(UploadOutlined), label: 'Create Admin'
-            },
-            {
-                key: '5',
-                icon: createElement(UploadOutlined), label: 'Create Student'
-            },
-            {
-                key: '6',
-                icon: createElement(UploadOutlined), label: 'Create Faculty'
-            },]
-    },
-];
 const MainLayout = () => {
     return (
         <Layout style={{ minHeight: '100vh' }}>
@@ -56,7 +26,7 @@ const MainLayout = () => {
                 }} >
                     <h1>PH University</h1>
                 </div>
-                <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']} items={items} />
+                <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']} items={adminSidebarItems} />
             </Sider>
             <Layout>
                 <Header style={{ padding: 0 }} />
@@ -67,7 +37,7 @@ const MainLayout = () => {
                             minHeight: 360,
                         }}
                     >
-                        <h1>The main content goes here</h1>
+                        <Outlet />
                     </div>
                 </Content>
                 <Footer style={{ textAlign: 'center' }}>
