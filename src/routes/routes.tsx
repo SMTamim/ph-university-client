@@ -4,6 +4,7 @@ import { adminPaths } from "./admin.routes";
 import { routeGenerator } from "../utils/routesGenerator";
 import { facultyPaths } from "./faculty.routes";
 import { studentPaths } from "./student.routes";
+import Login from "../pages/login/Login";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
     path: '/student',
     element: <App />,
     children: routeGenerator(studentPaths)
+  },
+  {
+    path: '/login',
+    element: <Login/>
   }
 ]);
 
