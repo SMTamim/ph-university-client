@@ -23,7 +23,7 @@ const Login = () => {
     console.log('error => ', error);
 
     const onSubmit = async (data: FieldValues) => {
-        console.log(data);
+        // console.log(data);
         const loadingToast = toast.loading('Logging in...');
         try {
             const userCredentials = {
