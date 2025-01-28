@@ -20,3 +20,16 @@ export type TAcademicFaculty = {
   __v: number;
 };
 export type TAcademicFacultyTableData = Pick<TAcademicFaculty, "name">;
+
+export type TAcademicDepartment = {
+  _id: string;
+  name: string;
+  academicFaculty: TAcademicFaculty;
+  createdAt: string;
+  updatedAt: string;
+  __v: string;
+};
+export type TAcademicDepartmentTableData = {
+  name: string;
+  academicFaculty: string;
+};
