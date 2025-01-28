@@ -28,7 +28,7 @@ const baseQueryWithRefreshToken: BaseQueryFn<FetchArgs, BaseQueryApi, Definition
   api,
   extraOptions
 ): Promise<any> => {
-  let result = (await baseQuery(args, api, extraOptions)) as TResponse;
+  let result = (await baseQuery(args, api, extraOptions)) as TResponse<any>;
   if (result?.error?.status === 404) {
     toast.dismiss();
     toast.error(result?.error?.data.message);
@@ -49,7 +49,7 @@ const baseQueryWithRefreshToken: BaseQueryFn<FetchArgs, BaseQueryApi, Definition
           token: data.data.accessToken
         })
       );
-      result = (await baseQuery(args, api, extraOptions)) as TResponse;
+      result = (await baseQuery(args, api, extraOptions)) as TResponse<any>;
     } else {
       api.dispatch(logout());
     }
