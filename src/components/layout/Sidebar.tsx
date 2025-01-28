@@ -31,6 +31,7 @@ const Sidebar = () => {
     return (
         <Sider
             breakpoint="lg"
+            width={250}
             collapsedWidth="0"
             // onBreakpoint={(broken) => {
             //     console.log(broken);

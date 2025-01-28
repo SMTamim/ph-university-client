@@ -1,6 +1,6 @@
 import { Button, Table, TableColumnsType, TableProps } from "antd";
 import { useGetAllAcademicSemestersQuery } from "../../../redux/features/admin/academicManagement";
-import { TTableData } from "../../../../types/academicManagement.type";
+import { TAcademicSemesterTableData } from "../../../../types/academicManagement.type";
 import { useState } from "react";
 import { TQueryParam } from "../../../../types";
 
@@ -11,7 +11,7 @@ const yearFilters = [0, 1, 2, 3, 4].map((year) => ({
 }))
 
 
-const columns: TableColumnsType<TTableData> = [
+const columns: TableColumnsType<TAcademicSemesterTableData> = [
     {
         title: 'Name',
         dataIndex: 'name',
@@ -60,7 +60,7 @@ const AcademicSemester = () => {
         key: _id, name, year, startMonth, endMonth
     }));
 
-    const onChange: TableProps<TTableData>['onChange'] = (_pagination, filters, _sorter, extra) => {
+    const onChange: TableProps<TAcademicSemesterTableData>['onChange'] = (_pagination, filters, _sorter, extra) => {
         if (extra.action === 'filter') {
             const queryParams: TQueryParam[] = [];
 
@@ -76,7 +76,7 @@ const AcademicSemester = () => {
 
 
     return (
-        <Table<TTableData>
+        <Table<TAcademicSemesterTableData>
             columns={columns}
             dataSource={tableData}
             onChange={onChange}

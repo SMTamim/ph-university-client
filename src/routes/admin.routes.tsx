@@ -51,16 +51,6 @@ export const adminPaths = [
                 element: <AcademicSemester />,
             },
             {
-                name: 'Create Academic Department',
-                path: 'create-academic-department',
-                element: <CreateAcademicDepartment />,
-            },
-            {
-                name: 'Academic Department',
-                path: 'academic-department',
-                element: <AcademicDepartment />,
-            },
-            {
                 name: 'Create Academic Faculty',
                 path: 'create-academic-faculty',
                 element: <CreateAcademicFaculty />,
@@ -69,6 +59,16 @@ export const adminPaths = [
                 name: 'Academic Faculty',
                 path: 'academic-faculty',
                 element: <AcademicFaculty />,
+            },
+            {
+                name: 'Create Academic Department',
+                path: 'create-academic-department',
+                element: <CreateAcademicDepartment />,
+            },
+            {
+                name: 'Academic Department',
+                path: 'academic-department',
+                element: <AcademicDepartment />,
             },
         ],
     },
