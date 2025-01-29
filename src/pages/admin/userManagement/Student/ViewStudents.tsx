@@ -90,22 +90,24 @@ const ViewStudents = () => {
                                 ),
                             };
                             const confirmed = await modal.confirm(config);
-                            const loadingToast = toast.loading('Changing Status...');
-                            try {
-                                const statusData = { status: newStatus, userId: item.userId };
-                                const res = await changeUserStatus(statusData) as TResponseRedux<null>;
+                            if (confirmed) {
+                                const loadingToast = toast.loading('Changing Status...');
+                                try {
+                                    const statusData = { status: newStatus, userId: item.userId };
+                                    const res = await changeUserStatus(statusData) as TResponseRedux<null>;
 
-                                if (res.error) {
-                                    toast.error(res.error?.data.message || "Some error occurred while changing status", { id: loadingToast });
-                                } else {
-                                    toast.success(`Successfully change status to ${statusData.status}!`, { id: loadingToast })
-                                    await refetch();
+                                    if (res.error) {
+                                        toast.error(res.error?.data.message || "Some error occurred while changing status", { id: loadingToast });
+                                    } else {
+                                        toast.success(`Successfully change status to ${statusData.status}!`, { id: loadingToast })
+                                        await refetch();
+                                    }
+                                } catch (err) {
+                                    console.log(err);
+                                    toast.error("Something went wrong!", { id: loadingToast });
                                 }
-                            } catch (err) {
-                                console.log(err);
-                                toast.error("Something went wrong!", { id: loadingToast });
                             }
-                            console.log('Confirmed: ', confirmed);
+
                         }}
                     >
                         {statusText}
