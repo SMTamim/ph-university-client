@@ -6,6 +6,7 @@ export type TStudent = {
   user: TUser;
   name: TName;
   gender: string;
+  dateOfBirth?: string;
   email: string;
   contactNo: string;
   emergencyContactNo: string;
@@ -21,13 +22,15 @@ export type TStudent = {
   fullName: string;
 };
 
+export type TStatus = "blocked" | "in-progress";
+
 export type TUser = {
   _id: string;
   id: string;
   email: string;
   needsPasswordChange: boolean;
   role: string;
-  status: string;
+  status: TStatus;
   isDeleted: boolean;
   createdAt: string;
   updatedAt: string;
@@ -59,4 +62,8 @@ export type TLocalGuardian = {
   _id: string;
 };
 
-export type TStudentTableData = Pick<TStudent, "fullName" | "id" >;
+export type TStudentTableData = Pick<TStudent, "fullName" | "id" | "email" | "contactNo"> & {
+  key: string;
+  status: "in-progress" | "blocked";
+  userId: string;
+};

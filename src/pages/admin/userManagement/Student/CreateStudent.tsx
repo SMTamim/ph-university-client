@@ -1,15 +1,15 @@
 import { Button, Col, Divider, Form, Input, Row } from "antd";
-import PHForm from "../../../components/form/PHForm";
+import PHForm from "../../../../components/form/PHForm";
 import { Controller, FieldValues, SubmitHandler } from "react-hook-form";
-import PHInput from "../../../components/form/PHInput";
-import PHDatePicker from "../../../components/form/PHDatePicker";
-import PHSelect, { TOption } from "../../../components/form/PHSelect";
-import { bloodGroupOptions } from "../../../constants/global";
-import { useGetAllAcademicDepartmentQuery, useGetAllAcademicSemestersQuery } from "../../../redux/features/admin/academicManagement";
-import { useCreateStudentMutation } from "../../../redux/features/admin/userManagement.api";
+import PHInput from "../../../../components/form/PHInput";
+import PHDatePicker from "../../../../components/form/PHDatePicker";
+import PHSelect, { TOption } from "../../../../components/form/PHSelect";
+import { bloodGroupOptions } from "../../../../constants/global";
+import { useGetAllAcademicDepartmentQuery, useGetAllAcademicSemestersQuery } from "../../../../redux/features/admin/academicManagement.api";
+import { useCreateStudentMutation } from "../../../../redux/features/admin/userManagement.api";
 import { toast } from "sonner";
-import { TResponseRedux } from "../../../../types";
-import { TStudent } from "../../../../types/userManagement.type";
+import { TResponseRedux } from "../../../../../types";
+import { TStudent } from "../../../../../types/userManagement.type";
 
 const formDefaultValues = {
     "name": {

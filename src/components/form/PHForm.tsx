@@ -1,10 +1,12 @@
 
 import { Form } from 'antd';
-import { ReactNode } from 'react';
+import { ReactNode, useEffect } from 'react';
 import { FieldValues, FormProvider, SubmitHandler, useForm } from 'react-hook-form';
 
 type TFormConfig = {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     defaultValues?: Record<string, any>;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     resolver?: any;
 }
 type TFormProps = {
@@ -21,6 +23,12 @@ const PHForm = ({ onSubmit, children, defaultValues, resolver }: TFormProps) => 
         formConfig['resolver'] = resolver;
     }
     const methods = useForm(formConfig);
+    // Reset form when defaultValues change
+    useEffect(() => {
+        if (defaultValues) {
+            methods.reset(defaultValues);
+        }
+    }, [defaultValues, methods]);
     const submit: SubmitHandler<FieldValues> = (data) => {
         onSubmit(data);
         methods.reset();

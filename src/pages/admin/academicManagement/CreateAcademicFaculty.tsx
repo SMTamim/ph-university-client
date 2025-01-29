@@ -4,7 +4,7 @@ import PHInput from "../../../components/form/PHInput";
 import { FieldValues, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { academicFacultySchema } from "../../../schema/academicManagementSchema";
-import { useCreateAcademicFacultyMutation } from "../../../redux/features/admin/academicManagement";
+import { useCreateAcademicFacultyMutation } from "../../../redux/features/admin/academicManagement.api";
 import { toast } from "sonner";
 import { TResponseRedux } from "../../../../types";
 import { TAcademicFaculty } from "../../../../types/academicManagement.type";

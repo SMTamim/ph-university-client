@@ -1,6 +1,6 @@
 import { Button, Input, Table, TableColumnsType, TableProps } from "antd";
 import { TAcademicFacultyTableData } from "../../../../types/academicManagement.type";
-import { useGetAllAcademicFacultyQuery } from "../../../redux/features/admin/academicManagement";
+import { useGetAllAcademicFacultyQuery } from "../../../redux/features/admin/academicManagement.api";
 import { useState } from "react";
 import { TQueryParam } from "../../../../types";
 import { FaSearch } from "react-icons/fa";

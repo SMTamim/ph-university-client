@@ -2,7 +2,7 @@ import { Button, Col, Row } from "antd";
 import { TAcademicDepartment, TAcademicFaculty } from "../../../../types/academicManagement.type";
 import PHForm from "../../../components/form/PHForm";
 import PHSelect, { TOption } from "../../../components/form/PHSelect";
-import { useCreateAcademicDepartmentMutation, useGetAllAcademicFacultyQuery } from "../../../redux/features/admin/academicManagement";
+import { useCreateAcademicDepartmentMutation, useGetAllAcademicFacultyQuery } from "../../../redux/features/admin/academicManagement.api";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { academicDepartmentSchema } from "../../../schema/academicManagementSchema";
 import { FieldValues, SubmitHandler } from "react-hook-form";
