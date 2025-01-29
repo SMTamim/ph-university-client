@@ -50,3 +50,14 @@ export const monthOptions: TOption[] = [
     label: "December"
   }
 ];
+
+export const bloodGroupOptions: TOption[] = [
+  { label: "A+", value: "A+" },
+  { label: "A-", value: "A-" },
+  { label: "B+", value: "B+" },
+  { label: "B-", value: "B-" },
+  { label: "AB+", value: "AB+" },
+  { label: "AB-", value: "AB-" },
+  { label: "O+", value: "O+" },
+  { label: "O-", value: "O-" }
+];

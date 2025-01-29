@@ -7,12 +7,14 @@ type TPHSelectProps = {
     name: string,
     label: string,
     options: TOption[],
+    disabled?: boolean,
 }
 
-const PHSelect = ({ name, label, options }: TPHSelectProps) => {
+const PHSelect = ({ name, label, options, disabled }: TPHSelectProps) => {
     return (
         <Controller name={name} render={({ field, fieldState: { error } }) => <Form.Item label={label}>
             <Select
+                disabled={disabled}
                 // defaultValue={options[0].value}
                 style={{ width: "100%" }}
                 {...field}
